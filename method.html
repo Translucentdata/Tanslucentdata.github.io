@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPSI+ Dataset</title>
+</head>
+<body>
+    <p style="font-weight: bold; font-size: 4rem; text-align: center; margin-bottom: 1rem">SPSI+ Dataset</p>
+    <p style="color: rgb(4, 4, 53); font-weight: bold; font-size: 2rem; margin-left: 10rem; margin-right: 10rem;">
+        Method
+    </p>
+    <p style= "font-weight: bolder ;font-size: 1.3rem; margin-left: 10rem; margin-right: 10rem; margin-bottom: -1rem;">
+        Data Collection and Preprocessing
+    </p>
+    <p style= "font-size: 1.2rem; margin-left: 10rem; margin-right: 10rem">
+        We used 29,190 images (excluding clean panels) from the original SPSI dataset. 
+        We first crop the solar panel region from the images. <br>
+        We then manually annotate the soiling from each image as the SPSI dataset does not provide the soiling annotation. <br>
+        As for different types of solar panels, we used ten images of panels that contain various patterns. 
+    </p>
+    <p style= "font-weight: bolder ;font-size: 1.3rem; margin-left: 10rem; margin-right: 10rem; margin-bottom: -1rem;">
+        Data Augmentation
+    </p>
+    <p style= "font-size: 1.2rem; margin-left: 10rem; margin-right: 10rem">
+        We first selected all 84 unique soiling images from the original SPSI dataset.
+        We then manipulated each image by rotating, vertically and horizontally flipping, and scale jittering.<br> 
+        Here, all manipulations occur randomly, 50 times per image. 
+        For scale jittering, we used the resize range from 0.5 to 2.0 of the original image size. <br>
+        Finally, we used the Copy-Paste method to copy the soiling part from augmented images of solar panels and pasted them to other types of solar panels. 
+    </p>
+    <p style= "font-weight: bolder ;font-size: 1.3rem; margin-left: 10rem; margin-right: 10rem; margin-bottom: -1rem;">
+        Prediction
+    </p>
+    <p style= "font-size: 1.2rem; margin-left: 10rem; margin-right: 10rem">
+        Three state-of-the-art semantic segmentation models are used to verify SPSI+ dataset: FCN, DeepLab v3+, and U-Net. 
+    </p>
+    <p style=" font-size: 1.4rem;  font-weight: bolder; margin-left: 10rem; margin-right: 10rem; margin-bottom: 3rem;">
+        More details about SPSI+ in this <a href="https://drive.google.com/file/d/1Aw4VQpJHaJV0jG92UbmaUSneVeHpinrv/view?usp=sharing" target="_blank" > Supplementalfile</a>
+    </p>
+    <div style="text-align : center; margin-bottom: 5rem;">
+        <figure>
+            <img src="methodoverview.png" alt="" width = "1200">
+            <figcaption style="font-size: 1.2rem;">
+              Overview of our methodology
+            </figcaption>
+          </figure>
+        </div>
+    <div style="text-align : center;">
+        <figure>
+            <img src="SPSI+ statistics.png" alt="" width = "1000">
+            <figcaption style="font-size: 1.2rem;">
+              Details of SPSI+ Dataset
+            </figcaption>
+          </figure>
+   </div>
+    </p>
+</body>
+</html>
